@@ -14,6 +14,12 @@
 		0505B0841EB239D6000E6225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0505B0821EB239D6000E6225 /* LaunchScreen.storyboard */; };
 		0505B08F1EB239D6000E6225 /* UITableView_EventsManager_NTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B08E1EB239D6000E6225 /* UITableView_EventsManager_NTATests.swift */; };
 		0505B09A1EB239D6000E6225 /* UITableView_EventsManager_NTAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B0991EB239D6000E6225 /* UITableView_EventsManager_NTAUITests.swift */; };
+		0505B0AA1EB23B15000E6225 /* ManagerEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B0A91EB23B15000E6225 /* ManagerEventController.swift */; };
+		0505B0AC1EB23B9A000E6225 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B0AB1EB23B9A000E6225 /* EventDetailController.swift */; };
+		0505B0AE1EB23D4B000E6225 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B0AD1EB23D4B000E6225 /* Event.swift */; };
+		0505B0B01EB23E6C000E6225 /* EventLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0505B0AF1EB23E6C000E6225 /* EventLines.swift */; };
+		05BB13851EB3AFE6003D4713 /* HeaderViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB13831EB3AFE6003D4713 /* HeaderViewSection.swift */; };
+		05BB13861EB3AFE6003D4713 /* HeaderViewSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BB13841EB3AFE6003D4713 /* HeaderViewSection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		0505B0951EB239D6000E6225 /* UITableView_EventsManager_NTAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITableView_EventsManager_NTAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0505B0991EB239D6000E6225 /* UITableView_EventsManager_NTAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView_EventsManager_NTAUITests.swift; sourceTree = "<group>"; };
 		0505B09B1EB239D6000E6225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0505B0A91EB23B15000E6225 /* ManagerEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerEventController.swift; sourceTree = "<group>"; };
+		0505B0AB1EB23B9A000E6225 /* EventDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		0505B0AD1EB23D4B000E6225 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0505B0AF1EB23E6C000E6225 /* EventLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLines.swift; sourceTree = "<group>"; };
+		05BB13831EB3AFE6003D4713 /* HeaderViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewSection.swift; sourceTree = "<group>"; };
+		05BB13841EB3AFE6003D4713 /* HeaderViewSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderViewSection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,13 +109,15 @@
 		0505B0781EB239D5000E6225 /* UITableView_EventsManager_NTA */ = {
 			isa = PBXGroup;
 			children = (
-				0505B0A71EB239E5000E6225 /* New Group */,
+				0505B0A81EB23A1F000E6225 /* Model */,
+				0505B0A71EB239E5000E6225 /* Controller */,
 				0505B0791EB239D5000E6225 /* AppDelegate.swift */,
-				0505B07B1EB239D5000E6225 /* ViewController.swift */,
 				0505B07D1EB239D5000E6225 /* Main.storyboard */,
 				0505B0801EB239D6000E6225 /* Assets.xcassets */,
 				0505B0821EB239D6000E6225 /* LaunchScreen.storyboard */,
 				0505B0851EB239D6000E6225 /* Info.plist */,
+				05BB13831EB3AFE6003D4713 /* HeaderViewSection.swift */,
+				05BB13841EB3AFE6003D4713 /* HeaderViewSection.xib */,
 			);
 			path = UITableView_EventsManager_NTA;
 			sourceTree = "<group>";
@@ -126,11 +140,23 @@
 			path = UITableView_EventsManager_NTAUITests;
 			sourceTree = "<group>";
 		};
-		0505B0A71EB239E5000E6225 /* New Group */ = {
+		0505B0A71EB239E5000E6225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0505B0A91EB23B15000E6225 /* ManagerEventController.swift */,
+				0505B07B1EB239D5000E6225 /* ViewController.swift */,
+				0505B0AB1EB23B9A000E6225 /* EventDetailController.swift */,
 			);
-			name = "New Group";
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0505B0A81EB23A1F000E6225 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0505B0AD1EB23D4B000E6225 /* Event.swift */,
+				0505B0AF1EB23E6C000E6225 /* EventLines.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +269,7 @@
 				0505B0841EB239D6000E6225 /* LaunchScreen.storyboard in Resources */,
 				0505B0811EB239D6000E6225 /* Assets.xcassets in Resources */,
 				0505B07F1EB239D5000E6225 /* Main.storyboard in Resources */,
+				05BB13861EB3AFE6003D4713 /* HeaderViewSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0505B07C1EB239D5000E6225 /* ViewController.swift in Sources */,
+				0505B0AA1EB23B15000E6225 /* ManagerEventController.swift in Sources */,
 				0505B07A1EB239D5000E6225 /* AppDelegate.swift in Sources */,
+				0505B0AC1EB23B9A000E6225 /* EventDetailController.swift in Sources */,
+				0505B0B01EB23E6C000E6225 /* EventLines.swift in Sources */,
+				05BB13851EB3AFE6003D4713 /* HeaderViewSection.swift in Sources */,
+				0505B0AE1EB23D4B000E6225 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +547,7 @@
 				0505B0A01EB239D6000E6225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0505B0A11EB239D6000E6225 /* Build configuration list for PBXNativeTarget "UITableView_EventsManager_NTATests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +556,7 @@
 				0505B0A31EB239D6000E6225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0505B0A41EB239D6000E6225 /* Build configuration list for PBXNativeTarget "UITableView_EventsManager_NTAUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +565,7 @@
 				0505B0A61EB239D6000E6225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
