@@ -10,9 +10,11 @@ import UIKit
 
 class HeaderViewSection: UIView {
     
-    //@//IBOutlet weak var headerSectionImage: UIImageView!
-    @IBOutlet weak var headerSectionImage: UIImageView!
+
+  
     @IBOutlet weak var headerSectionLabel: UILabel!
+    @IBOutlet weak var headerSectionImage: UIImageView!
+   // @IBOutlet weak var headerSectionLabel: UILabel!
     //@IBOutlet weak var headerSectionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

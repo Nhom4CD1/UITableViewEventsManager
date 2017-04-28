@@ -61,20 +61,20 @@ class ManagerEventController: UITableViewController {
     // User must set height to show the section
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heightofHeader
-    }
+   }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerViewSection = Bundle.main.loadNibNamed("HeaderViewSection", owner: self, options: nil)?.first as! HeaderViewSection
         
-        headerViewSection.headerSectionImage.image = eventLines[section].dateImages
+       headerViewSection.headerSectionImage.image = eventLines[section].dateImages
         headerViewSection.headerSectionLabel.text = eventLines[section].dates
         
         return headerViewSection
-    }
+    }*/
     
     // Set data for tableView
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Event_Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Event Cell", for: indexPath)
         
         let eventLine = eventLines[indexPath.section]
         let event = eventLine.events[indexPath.row]
@@ -117,7 +117,7 @@ class ManagerEventController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if (segue.identifier == "Event_Detail") {
+        if (segue.identifier == "Event Detail") {
             // initialize new view controller and cast it as your view controller
             let eventDetailVC = segue.destination as! EventDetailController
             if let indexPath = self.tableView.indexPathForSelectedRow{

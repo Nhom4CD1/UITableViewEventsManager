@@ -41,8 +41,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="headerSectionImage" destination="bBc-Pa-nUx" id="1BA-hr-IXB"/>
-                <outlet property="headerSectionLabel" destination="5qJ-X5-wi6" id="8PW-vl-YDc"/>
+                <outlet property="headerSectionImage" destination="bBc-Pa-nUx" id="uxu-QO-19K"/>
+                <outlet property="headerSectionLabel" destination="5qJ-X5-wi6" id="deQ-n8-Prp"/>
             </connections>
         </tableViewCell>
     </objects>
