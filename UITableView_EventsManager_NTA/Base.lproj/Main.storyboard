@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Event Cell" id="iEX-hC-c3f">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CongViec_Cell" id="iEX-hC-c3f">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iEX-hC-c3f" id="PlJ-LZ-i7Q">
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6Em-8h-Nlr" kind="show" identifier="Event Detail" id="uZh-50-TRH"/>
+                                    <segue destination="6Em-8h-Nlr" kind="show" identifier="ChiTiet_CongViec" id="uZh-50-TRH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,8 +51,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.77904122009999999" green="1" blue="0.77783149100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="IMAGE" id="AVN-98-sRi">
+                            <tableViewSection headerTitle="IMAGE" id="AVN-98-sRi" colorLabel="IBBuiltInLabel-Red">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="6Q4-d5-FMA">
                                         <rect key="frame" x="0.0" y="56" width="375" height="212"/>
@@ -61,16 +62,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-LA-vbL">
-                                                    <rect key="frame" x="70" y="8" width="234" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9oU-LA-vbL">
+                                                    <rect key="frame" x="10" y="10" width="355" height="192"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9oU-LA-vbL" firstAttribute="top" secondItem="Qvx-lu-mtV" secondAttribute="top" constant="10" id="2fE-Qb-xOR"/>
+                                                <constraint firstAttribute="bottom" secondItem="9oU-LA-vbL" secondAttribute="bottom" constant="10" id="Fcm-iv-BGz"/>
+                                                <constraint firstItem="9oU-LA-vbL" firstAttribute="centerY" secondItem="Qvx-lu-mtV" secondAttribute="centerY" id="QEE-YV-IAf"/>
+                                                <constraint firstAttribute="trailing" secondItem="9oU-LA-vbL" secondAttribute="trailing" constant="10" id="RDL-xj-eoJ"/>
+                                                <constraint firstItem="9oU-LA-vbL" firstAttribute="centerX" secondItem="Qvx-lu-mtV" secondAttribute="centerX" id="X12-iD-3Rn"/>
+                                                <constraint firstItem="9oU-LA-vbL" firstAttribute="leading" secondItem="Qvx-lu-mtV" secondAttribute="leading" constant="10" id="e8y-TF-AfJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="DETAIL" id="3Ba-fR-cjY">
+                            <tableViewSection headerTitle="DETAIL" id="3Ba-fR-cjY" colorLabel="IBBuiltInLabel-Red">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ObZ-Ca-Oi0">
                                         <rect key="frame" x="0.0" y="324" width="375" height="44"/>
@@ -94,6 +103,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="WO3-RK-Xlo" secondAttribute="trailing" constant="91" id="fNd-oE-Ss0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.77904122009999999" green="1" blue="0.77783149100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="53" id="6UL-FS-yXX">
                                         <rect key="frame" x="0.0" y="368" width="375" height="53"/>
@@ -104,14 +114,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWk-fs-zFH" userLabel="Sự kiện">
                                                     <rect key="frame" x="8" y="15" width="42" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vwe-ed-Fm9" userLabel="eventtitle">
                                                     <rect key="frame" x="58" y="12" width="309" height="30"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="6Em-8h-Nlr" id="Sdo-qV-huI"/>
@@ -127,6 +137,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vwe-ed-Fm9" secondAttribute="trailing" id="rSL-ht-dNQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.89381241060000005" green="0.98983970210000005" blue="0.82891512830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="eml-7e-pOC">
                                         <rect key="frame" x="0.0" y="421" width="375" height="171"/>
@@ -135,11 +146,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rIG-6r-N7j" userLabel="Nội dung công việc">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIG-6r-N7j" userLabel="Nội dung công việc">
                                                     <rect key="frame" x="8" y="8" width="359" height="154.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.59327840669999998" green="0.7738885016" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="6Em-8h-Nlr" id="xyF-d7-ffq"/>
@@ -171,7 +182,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kz5-Cr-KBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="125"/>
+            <point key="canvasLocation" x="1504.8" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s9A-1O-qN7">

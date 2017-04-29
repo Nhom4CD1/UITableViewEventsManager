@@ -10,19 +10,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderViewSection" customModule="UITableView_EventsManager_NTA" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lst-w8-nQ8" customClass="HeaderViewSection">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mBJ-Bh-vtU" customClass="HeaderViewSection" customModule="UITableView_EventsManager_NTA" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lst-w8-nQ8" id="UED-Sx-LDq">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mBJ-Bh-vtU" id="EhQ-1B-Gys">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bBc-Pa-nUx">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dwh-Db-uqw">
                         <rect key="frame" x="8" y="1" width="40" height="40"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qJ-X5-wi6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrY-v1-eTb">
                         <rect key="frame" x="56" y="11" width="256" height="21"/>
                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                         <nil key="textColor"/>
@@ -30,20 +30,16 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="leadingMargin" secondItem="bBc-Pa-nUx" secondAttribute="leading" id="3ER-bM-BNS"/>
-                    <constraint firstItem="5qJ-X5-wi6" firstAttribute="top" secondItem="UED-Sx-LDq" secondAttribute="topMargin" constant="3" id="G8f-hg-5am"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="5qJ-X5-wi6" secondAttribute="bottom" constant="3.5" id="Rzq-Bx-mp7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="5qJ-X5-wi6" secondAttribute="trailing" id="Ulh-Jr-P0q"/>
-                    <constraint firstItem="5qJ-X5-wi6" firstAttribute="leading" secondItem="UED-Sx-LDq" secondAttribute="leadingMargin" constant="48" id="V4i-Hd-Z21"/>
-                    <constraint firstItem="bBc-Pa-nUx" firstAttribute="top" secondItem="UED-Sx-LDq" secondAttribute="topMargin" constant="-7" id="aa4-Ev-A57"/>
-                    <constraint firstItem="5qJ-X5-wi6" firstAttribute="leading" secondItem="bBc-Pa-nUx" secondAttribute="trailing" constant="8" id="d1s-Gn-ra0"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="bBc-Pa-nUx" secondAttribute="bottom" constant="-5.5" id="mmt-Dp-nJJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Dwh-Db-uqw" secondAttribute="bottom" constant="-5.5" id="A1r-3F-cqS"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Dwh-Db-uqw" secondAttribute="leading" id="Gwt-nq-Fpt"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GrY-v1-eTb" secondAttribute="trailing" id="MVV-tX-VNM"/>
+                    <constraint firstItem="GrY-v1-eTb" firstAttribute="top" secondItem="EhQ-1B-Gys" secondAttribute="topMargin" constant="3" id="S07-zw-PkA"/>
+                    <constraint firstItem="GrY-v1-eTb" firstAttribute="leading" secondItem="EhQ-1B-Gys" secondAttribute="leadingMargin" constant="48" id="chz-St-Ul7"/>
+                    <constraint firstItem="Dwh-Db-uqw" firstAttribute="top" secondItem="EhQ-1B-Gys" secondAttribute="topMargin" constant="-7" id="e2H-hm-wMI"/>
+                    <constraint firstItem="GrY-v1-eTb" firstAttribute="leading" secondItem="Dwh-Db-uqw" secondAttribute="trailing" constant="8" id="n6U-q0-BtP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GrY-v1-eTb" secondAttribute="bottom" constant="3.5" id="xJ9-1v-O7V"/>
                 </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="headerSectionImage" destination="bBc-Pa-nUx" id="uxu-QO-19K"/>
-                <outlet property="headerSectionLabel" destination="5qJ-X5-wi6" id="deQ-n8-Prp"/>
-            </connections>
         </tableViewCell>
     </objects>
 </document>

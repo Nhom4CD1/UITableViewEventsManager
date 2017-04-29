@@ -14,9 +14,9 @@ class Event{
     var noidungCV: String
     
     //Hàm khởi tạo
-    init(tenVieced: String, noidungCVed: String)
+    init(tenViec: String, noidungCV: String)
     {
-        self.tenViec = tenVieced
-        self.noidungCV = noidungCVed
+        self.tenViec = tenViec
+        self.noidungCV = noidungCV
     }
 }

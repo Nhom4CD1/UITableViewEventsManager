@@ -43,7 +43,7 @@ class EventDetailController: UITableViewController, UITextViewDelegate, UITextFi
         return true
     }
     
-    // UIScrollViewDelegate ( Keyboard will disable when scroll the UIView )
+    // UIScrollViewDelegate ( Disable Keyboard  khi cuôn (scroll) màn hình the UIView )
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         eventDesciptionTextView.resignFirstResponder()
         txtEventTitle.resignFirstResponder()

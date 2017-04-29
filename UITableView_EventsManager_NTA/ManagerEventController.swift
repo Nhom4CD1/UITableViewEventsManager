@@ -40,65 +40,62 @@ class ManagerEventController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        /*return dateSections.count*/
         return eventLines.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         let eventLine = eventLines[section]
-        return eventLine.events.count // the number of event in the section
+        return eventLine.events.count // trả về số event trong section
     }
     
-    //Mark Default Header Section
-    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //Mark  Header Section Mặc định
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
      let eventLine = eventLines[section]
-     return eventLine.dates // the number of each day
-     }*/
+     return eventLine.dates // số dòng sự kiện mỗi ngày
+    }
     
-    //Mark Edit Header Section
-    // User must set height to show the section
+    //Mark   Chỉnh sửa Header Section
+    // Người dùng phải set height để show  section
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return heightofHeader
-   }
+    }
     
-   /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerViewSection = Bundle.main.loadNibNamed("HeaderViewSection", owner: self, options: nil)?.first as! HeaderViewSection
+  //  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //    let headerViewSection = Bundle.main.loadNibNamed("HeaderViewSection", owner: self, options: nil)?.first as! HeaderViewSection
         
-       headerViewSection.headerSectionImage.image = eventLines[section].dateImages
-        headerViewSection.headerSectionLabel.text = eventLines[section].dates
+      //  headerViewSection.headerSectionImage.image = eventLines[section].dateImages
+        //headerViewSection.headerSectionLabel.text = eventLines[section].dates
         
-        return headerViewSection
-    }*/
-    
-    // Set data for tableView
+        //return headerViewSection
+    //}
+    // Set data cho tableView
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Event Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CongViec_Cell", for: indexPath)
         
         let eventLine = eventLines[indexPath.section]
         let event = eventLine.events[indexPath.row]
         cell.textLabel?.text = event.tenViec
-        //Title detail
-        // Configure the cell...
+        //tenCV detail
+        // Cấu hình, tuỳ chỉnh lại cell
         return cell
     }
     
-    // Override to support editing the table view.
+    // Override lại hàm tableView cho việc chỉnh sửa trên table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            // Xoá một hàng từ data source
             let eventLine = eventLines[indexPath.section]
             eventLine.events.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic
             )
             
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        // Tạo mới một instance thuộc  appropriate class, chèn nó vào mảng (array), và thêm (add) 1hàng mới (row) vào table view
         }
     }
     
-    //Sort And Move Data From Section to Section
+    //Sắp xếp và Chuyển Data từ Section đến Section
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         //get data in sourceIndexPath
         let evenLine = eventLines[sourceIndexPath.section];
@@ -114,55 +111,51 @@ class ManagerEventController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Lấy về new view controller sử dụng segue.destinationViewController.
+        // Pass đối tượng đã chọn (the selected object) đến view controller mới.
         
-        if (segue.identifier == "Event Detail") {
-            // initialize new view controller and cast it as your view controller
+        if (segue.identifier == "ChiTiet_CongViec") {
+            // Khởi tạo một view controller và cast nó vào view controller
             let eventDetailVC = segue.destination as! EventDetailController
             if let indexPath = self.tableView.indexPathForSelectedRow{
                 eventDetailVC.event = eventAtIndexPath(indexPath: indexPath as NSIndexPath)
                 eventDetailVC.dateEvent = dateAtIndexPath(indexPath: indexPath as NSIndexPath)
                 eventDetailVC.dateImages = imageAtIndexPath(indexPath: indexPath as NSIndexPath)
             }
-            
         }
-        
-        
     }
     
-    //Get event by indexPath
+    //Lấy Công việc, sự kiện (event) dựa trên indexPath
     func eventAtIndexPath(indexPath: NSIndexPath) -> Event{
         let eventLine = eventLines[indexPath.section]
         return eventLine.events[indexPath.row]
     }
     
-    //Get date by indexPath
+    //Lấy Thứ(date) dựa trên indexPath
     func dateAtIndexPath(indexPath: NSIndexPath) -> String{
         let eventLine = eventLines[indexPath.section]
         return eventLine.dates
     }
     
-    //Get image by indexPath
+    //Lấy image nhờ indexPath
     func imageAtIndexPath(indexPath: NSIndexPath) -> UIImage{
         let eventLine = eventLines[indexPath.section]
         return eventLine.dateImages
     }
     
-    //Animation for TableView
+    //Animation cho TableView
     func animateTable() {
         
         let cells = tableView.visibleCells
-        
         let tableViewHeight = tableView.bounds.size.height
-        
+    
         for cell in cells {
             cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
         }
         
         var delayCounter = 0
         for cell in cells {
-            UIView.animate(withDuration: 0.85, delay: Double(delayCounter) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: Double(delayCounter) * 0.05, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 cell.transform = CGAffineTransform.identity
             }, completion: nil)
             delayCounter += 1
